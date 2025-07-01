@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earn with Messaging Tool</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1, h2 { color: #2c3e50; }
+    .highlight { background: #e8f5e9; padding: 10px; border-left: 4px solid #4caf50; margin: 15px 0; }
+    .section { margin-bottom: 30px; }
+    .cta-button { display: inline-block; padding: 12px 20px; background: #4caf50; color: white; border: none; border-radius: 8px; text-decoration: none; font-size: 16px; margin-top: 10px; }
+    .calculator input { width: 60px; padding: 6px; margin-right: 10px; }
+    .diagram { font-family: monospace; background: #eee; padding: 10px; white-space: pre-wrap; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💸 How to Make Money with Our Messaging Tool</h1>
+
+    <div class="section">
+      <h2>1. Earn from Referrals (20%)</h2>
+      <p>Invite others to sign up using your <strong>User ID</strong>. You earn <strong>20% commission</strong> on all their SMS credit purchases — for life!</p>
+      <div class="highlight">No limit to how many users you can refer. More users = more earnings.</div>
+    </div>
+
+    <div class="section">
+      <h2>2. Earn from Prime Contacts (70%)</h2>
+      <p>Register Prime Contacts who pay <strong>KSh 50/month</strong>. You earn <strong>70% (KSh 35)</strong> every month per contact.</p>
+      <div class="highlight">You can have unlimited prime contacts, and earn monthly recurring income.</div>
+    </div>
+
+    <div class="section">
+      <h2>📈 Smart Earning Diagram</h2>
+      <div class="diagram">
+          [ YOU ]
+             |
+      +------|----------------------+
+      |                             |
+[Referred Users]           [Prime Contacts]
+  Buy SMS - You get 20%    Pay KSh 50 - You get 70%
+             \                      /
+              \____Also Sign Up___/
+                      |
+                      v
+             You earn both 70% + 20%
+      </div>
+    </div>
+
+    <div class="section calculator">
+      <h2>💰 Earnings Calculator</h2>
+      <label>Referrals: <input type="number" id="referrals" value="10"></label>
+      <label>Prime Contacts: <input type="number" id="primes" value="20"></label>
+      <button onclick="calculateEarnings()">Estimate Earnings</button>
+      <p id="result"></p>
+    </div>
+
+    <div class="section">
+      <h2>📲 Engage Prime Contacts</h2>
+      <ul>
+        <li>Send them daily motivational quotes and Bible verses.</li>
+        <li>Use the <strong>Motivational Message Bank</strong> to copy and paste easily.</li>
+        <li>Encourage them to sign up as users using your User ID — you’ll earn even more!</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📖 Access Motivational Message Bank</h2>
+      <a href="#" class="cta-button">Open Message Bank</a>
+    </div>
+
+    <div class="section">
+      <h2>💵 Instant Withdrawals</h2>
+      <p>Withdraw your earnings instantly to <strong>Mpesa</strong> once you reach <strong>KSh 100</strong>. No delays. Just click and cash out!</p>
+    </div>
+
+    <div class="section">
+      <h2>🚀 Ready to Start?</h2>
+      <a href="#" class="cta-button">Join Now & Start Earning</a>
+    </div>
+  </div>
+
+  <script>
+    function calculateEarnings() {
+      const referrals = parseInt(document.getElementById('referrals').value) || 0;
+      const primes = parseInt(document.getElementById('primes').value) || 0;
+
+      const referralEarnings = referrals * 200; // assuming avg KSh 1000 spent => 20% = 200
+      const primeEarnings = primes * 35; // 70% of 50 = 35
+
+      const total = referralEarnings + primeEarnings;
+
+      document.getElementById('result').textContent = `Estimated earnings: KSh ${total.toLocaleString()}`;
+    }
+  </script>
+</body>
+</html>
