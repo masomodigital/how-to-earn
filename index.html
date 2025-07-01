@@ -5,21 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Earn with Messaging Tool</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
-    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    h1, h2 { color: #2c3e50; }
-    .highlight { background: #e8f5e9; padding: 10px; border-left: 4px solid #4caf50; margin: 15px 0; }
-    .section { margin-bottom: 30px; }
-    .cta-button { display: inline-block; padding: 12px 20px; background: #4caf50; color: white; border: none; border-radius: 8px; text-decoration: none; font-size: 16px; margin-top: 10px; }
-    .calculator input { width: 60px; padding: 6px; margin-right: 10px; }
-    .diagram { font-family: monospace; background: #eee; padding: 10px; white-space: pre-wrap; border-radius: 8px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .highlight {
+      background: #e8f5e9;
+      padding: 10px;
+      border-left: 4px solid #4caf50;
+      margin: 15px 0;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .calculator input {
+      width: 60px;
+      padding: 6px;
+      margin-right: 10px;
+    }
+    .diagram {
+      font-family: monospace;
+      background: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-   <div style="text-align: center; margin-bottom: 20px;">
-  <img src="https://i.imgur.com/BJoeIex.jpeg" alt="Earn Money Banner" style="max-width: 100%; height: auto; border-radius: 12px;">
-</div>
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img src="https://i.imgur.com/BJoeIex.jpeg" alt="Earn Money Banner" style="max-width: 100%; height: auto; border-radius: 12px;">
+    </div>
+
     <h1>💸 How to Make Money with Our Messaging Tool</h1>
 
     <div class="section">
@@ -37,17 +80,17 @@
     <div class="section">
       <h2>📈 Smart Earning Diagram</h2>
       <div class="diagram">
-          [ YOU ]
-             |
-      +------|----------------------+
-      |                             |
-[Referred Users]           [Prime Contacts]
-  Buy SMS - You get 20%    Pay KSh 50 - You get 70%
-             \                      /
-              \____Also Sign Up___/
-                      |
-                      v
-             You earn both 70% + 20%
+[ YOU ]
+   |
++--|------------------------+
+|                          |
+[Referred Users]    [Prime Contacts]
+Buy SMS → You get 20%     Pay KSh 50 → You get 70%
+           \\                     //
+            \\___Also Sign Up___//
+                    |
+                    v
+          You earn both 70% + 20%
       </div>
     </div>
 
@@ -89,7 +132,7 @@
       const referrals = parseInt(document.getElementById('referrals').value) || 0;
       const primes = parseInt(document.getElementById('primes').value) || 0;
 
-      const referralEarnings = referrals * 200; // assuming avg KSh 1000 spent => 20% = 200
+      const referralEarnings = referrals * 200; // Assuming avg spend of 1000 → 20% = 200
       const primeEarnings = primes * 35; // 70% of 50 = 35
 
       const total = referralEarnings + primeEarnings;
