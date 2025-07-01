@@ -94,7 +94,7 @@
 
       const total = referralEarnings + primeEarnings;
 
-      document.getElementById('result').textContent = `Estimated earnings: KSh ${total.toLocaleString()}`;
+      document.getElementById('result').innerHTML = `<strong style="color: blue;">Estimated earnings: KSh ${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>`;
     }
   </script>
 </body>
