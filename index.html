@@ -94,57 +94,64 @@ Buy SMS → You get 20%     Pay KSh 50 → You get 70%
       </div>
     </div>
 
-    <div class="section calculator">
+<div class="section calculator">
   <h2>💰 Earnings Calculator</h2>
+
   <div style="margin-bottom: 10px;">
-    <label>Referrals: <input type="number" id="referrals" value="10"></label>
+    <label>Number of Referrals:
+      <input type="number" id="referrals" value="10">
+    </label>
   </div>
+
   <div style="margin-bottom: 10px;">
-    <label>Prime Contacts: <input type="number" id="primes" value="20"></label>
+    <label>Avg Daily Credit Purchase (KSh):
+      <input type="number" id="dailyCredit" value="20">
+    </label>
   </div>
+
   <div style="margin-bottom: 10px;">
-    <button onclick="calculateEarnings()" style="background-color: #e53935; color: white; padding: 10px 16px; border: none; border-radius: 8px; font-size: 15px;">Estimate Earnings</button>
+    <label>Number of Prime Contacts:
+      <input type="number" id="primeContacts" value="50">
+    </label>
   </div>
+
+  <div style="margin-bottom: 10px;">
+    <label>Monthly Subscription Fee per Contact (KSh):
+      <input type="number" id="subscriptionFee" value="100">
+    </label>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <button onclick="calculateEarnings()" style="background-color: #e53935; color: white; padding: 10px 16px; border: none; border-radius: 8px; font-size: 15px;">
+      Estimate Earnings
+    </button>
+  </div>
+
   <p id="result"></p>
 </div>
 
-    <div class="section">
-      <h2>📲 Engage Prime Contacts</h2>
-      <ul>
-        <li>Send them daily motivational quotes and Bible verses.</li>
-        <li>Use the <strong>Motivational Message Bank</strong> to copy and paste easily.</li>
-        <li>Encourage them to sign up as users using your User ID — you’ll earn even more!</li>
-      </ul>
-    </div>
+<script>
+  function calculateEarnings() {
+    const referrals = parseInt(document.getElementById('referrals').value) || 0;
+    const dailyCredit = parseFloat(document.getElementById('dailyCredit').value) || 0;
+    const primeContacts = parseInt(document.getElementById('primeContacts').value) || 0;
+    const subscriptionFee = parseFloat(document.getElementById('subscriptionFee').value) || 0;
 
-    <div class="section">
-      <h2>📖 Access Motivational Message Bank</h2>
-      <a href="https://masomodigital.github.io/verses-quotes/" class="cta-button">Go to Message Bank</a>
-    </div>
+    const referralEarnings = referrals * dailyCredit * 30 * 0.20;
+    const subscriptionEarnings = primeContacts * subscriptionFee * 0.70;
+    const smsCost = primeContacts * 30 * 0.8;
 
-    <div class="section">
-      <h2>💵 Instant Withdrawals</h2>
-      <p>Withdraw your earnings instantly to <strong>Mpesa</strong> once you reach <strong>KSh 100</strong>. No delays. Just click and cash out!</p>
-    </div>
+    const netEarnings = referralEarnings + subscriptionEarnings - smsCost;
 
-    <div class="section">
-      <h2>🚀 Ready to Start?</h2>
-      <a href="https://masomodigital.github.io/BULKSMS-SIGN-UP/" class="cta-button">Join Now & Start Earning</a>
-    </div>
-  </div>
-
-  <script>
-    function calculateEarnings() {
-      const referrals = parseInt(document.getElementById('referrals').value) || 0;
-      const primes = parseInt(document.getElementById('primes').value) || 0;
-
-      const referralEarnings = referrals * 200; // Assuming avg spend of 1000 → 20% = 200
-      const primeEarnings = primes * 35; // 70% of 50 = 35
-
-      const total = referralEarnings + primeEarnings;
-
-      document.getElementById('result').innerHTML = `<strong style="color: blue;">Estimated earnings: KSh ${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>`;
-    }
-  </script>
+    document.getElementById('result').innerHTML = `
+      <div class="highlight">
+        <p><strong>Referral Earnings:</strong> KSh ${referralEarnings.toFixed(2)}</p>
+        <p><strong>Subscription Profit:</strong> KSh ${subscriptionEarnings.toFixed(2)}</p>
+        <p><strong>SMS Cost:</strong> KSh ${smsCost.toFixed(2)}</p>
+        <p><strong style="color:red; font-size: 18px;">Net Monthly Earnings: KSh ${netEarnings.toFixed(2)}</strong></p>
+      </div>
+    `;
+  }
+</script>
 </body>
 </html>
