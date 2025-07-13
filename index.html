@@ -148,7 +148,7 @@ Buy SMS → You get 20%     Pay KSh 50 → You get 70%
         <p><strong>Referral Earnings:</strong> KSh ${referralEarnings.toFixed(2)}</p>
         <p><strong>Subscription Profit:</strong> KSh ${subscriptionEarnings.toFixed(2)}</p>
         <p><strong>SMS Cost:</strong> KSh ${smsCost.toFixed(2)}</p>
-        <p><strong style="color:red; font-size: 18px;">Net Monthly Earnings: KSh ${netEarnings.toFixed(2)}</strong></p>
+        <p><strong style="color:red; font-size: 18px;">Net Monthly Earnings: KSh ${netEarnings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></p>
       </div>
     `;
   }
